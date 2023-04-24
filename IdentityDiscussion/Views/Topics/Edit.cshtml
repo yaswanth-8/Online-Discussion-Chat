@@ -1,0 +1,33 @@
+﻿@model IdentityDiscussion.Models.Topic
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="TopicId" />
+                <div class="form-group">
+                    <label asp-for="TopicName" class="control-label">Topic Name : </label>
+                    <input asp-for="TopicName" class="form-control" />
+                    <span asp-validation-for="TopicName" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="text-center mb-3">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+            <div class="text-center">
+                <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

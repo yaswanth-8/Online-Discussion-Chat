@@ -1,0 +1,21 @@
+﻿<form method="post" asp-controller="Topics" asp-action="Open">
+    <div class="card">
+        <div class="card-body chat-log">
+            @foreach (var message in ViewBag.Messages)
+            {
+                <div class="message">
+                    <span class="username">@message.UserEmail.Substring(0, message.UserEmail.Length - 10):</span>
+                    <span class="chat">@message.Chat</span>
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <div class="input-group">
+                <input type="text" class="form-control" name="message" placeholder="Type your message here...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
