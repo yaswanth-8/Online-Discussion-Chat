@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Invite";
+}
+
+@using (Html.BeginForm("SendEmail", "Email", FormMethod.Post))
+{
+    
+    <div class="form-group">
+        <label for="to">To:</label>
+        <input type="email" name="address" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="body">Body:</label>
+        <textarea name="body" class="form-control" rows="5" required></textarea>
+    </div>
+
+    <hr />
+
+    <button type="submit" class="btn btn-primary">Send Email</button>
+}
